@@ -1,0 +1,56 @@
+>>> np.arange(3)
+ array([0, 1, 2]) 
+>>> np.arange(3.0)
+ array([ 0., 1., 2.])
+ >>> np.arange(3,7)
+ array([3, 4, 5, 6])
+ >>> np.arange(3,7,2) 
+array([3, 5])
+
+figure, (ax1, ax2, ax3) = plt.subplots(nrows=3, ncols=1)
+
+figure.set_size_inches(18, 12)
+
+sns.pointplot(data=train, x="datetime-hour", y="count", ax=ax1)
+
+
+sns.pointplot(data=train, x="datetime-hour", y="count", hue="workingday", ax=ax2)
+
+
+sns.pointplot(data=train, x="datetime-hour", y="count", hue="datetime-dayofweek(humanized)", ax=ax3)
+pd.concat([df1,df2,df3], ignore_index=True) #데이터합치기
+df1=pd.DataFrame({"key":list("abcd"),..})
+pd.merge(df1,df2,on="column",how="outer"(left,right))
+median() 중간값
+data[].isin([ ])
+data.groupby('column')
+sns.distplot(data)
+group_by_day=data.groupby('day').time.sum()#day별로 time의 합을 구함
+y=list(group_by_day)
+x = np.arange(len(y))
+xlabel = list(data["day"])
+plt.title("Amount",fontsize=20)
+plt.bar(x, y)
+plt.xticks(x, xlabel)
+plt.yticks(sorted(y))
+plt.xlabel("Date",fontsize=10)
+plt.ylabel("Study Time(s)",fontsize=10)
+plt.savefig('C:\\study\\chart.png')#그래프 저장sns.lmplot(data= , x="column", y="column", hue="column",fit_reg=False)
+sns.countplot(x="column", hue="column", data= )
+pd.pivot_table(data, index="column", values="column")
+f, ax = plt.subplots(2, 2, figsize=(20,15))
+sns.countplot('Embarked', data=train,ax=ax[0,0])
+ax[0,0].set_title('No. Of Passengers Boarded')
+sns.countplot('Embarked',hue='Sex',data=train,ax=ax[0,1])
+ax[0,1].set_title('Male-Female Split for Embarked')
+sns.countplot('Embarked',hue='Survived',data=train,ax=ax[1,0])
+ax[1,0].set_title('Embarked vs Survived')
+sns.countplot('Embarked',hue='Pclass',data=train,ax=ax[1,1])
+ax[1,1].set_title('Embarked vs Pclass')
+plt.show()
+
+from IPython.core.interactiveshell import InteractiveShell
+InteractiveShell.ast_node_interactivity = "all"
+여러 output을 한 cell에 출력
+import pandas_profiling
+gender_submission.profile_report()
